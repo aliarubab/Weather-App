@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weather Dashboard — Alia Rubab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app" id="app">
+    <header class="header">
+      <div class="brand">
+        <h1>Coffee Weather ☁☕</h1>
+        <small class="sub">Forecast dashboard</small>
+      </div>
+
+      <div class="controls">
+        <div class="search">
+          <input id="cityInput" type="search" placeholder="Search city (e.g. Lahore)" />
+          <button id="searchBtn" aria-label="Search">Search</button>
+        </div>
+
+        <div class="toggles">
+          <button id="locBtn" title="Use my location">Use my location</button>
+          <button id="themeToggle" title="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="current" id="currentSection" aria-live="polite">
+        <div class="loader" id="loader" hidden></div>
+
+        <div class="current-card" id="currentCard" hidden>
+          <div class="left">
+            <img id="currentIcon" alt="weather icon" />
+            <div class="temp">
+              <span id="currentTemp">--°C</span>
+              <small id="currentDesc">--</small>
+            </div>
+          </div>
+
+          <div class="right">
+            <h2 id="cityName">City</h2>
+            <p class="meta">
+              <span>Humidity: <strong id="humidity">--%</strong></span>
+              <span>Wind: <strong id="wind">-- m/s</strong></span>
+            </p>
+            <p><small id="updatedAt">Updated: --</small></p>
+          </div>
+        </div>
+
+        <div class="error" id="error" hidden></div>
+      </section>
+
+      <section class="forecast" id="forecastSection" hidden>
+        <h3>3-Day Forecast</h3>
+        <div class="forecast-grid" id="forecastGrid"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>Built by Alia — portfolio project • Data from OpenWeatherMap</small>
+      <div class="footer-links">
+        <a id="sourceLink" href="#" target="_blank" rel="noopener">Live API docs</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
